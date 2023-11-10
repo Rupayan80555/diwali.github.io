@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    /*  */
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+.cont {
+    background-color: rgb(117, 0, 156);
+    height: 100%;
+}
+
+.im>img {
+    /* filter: drop-shadow(0 6px 80px rgb(210, 203, 9)); */
+    /* transition: all ease-in-out 2s; */
+    animation-name: key1;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    width: 420px;
+}
+
+.im {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(120px);
+}
+
+#cr {
+    position: absolute;
+    animation-name: crack;
+    animation-duration: 3s;
+    /* animation-direction: alternate; */
+    /* animation-timing-function: ease-in-out; */
+    animation-iteration-count: infinite;
+}
+
+#crr {
+    position: absolute;
+    animation-name: crack2;
+    animation-duration: 3s;
+    /* animation-direction: alternate; */
+    /* animation-timing-function: ease-in-out; */
+    animation-iteration-count: infinite;
+}
+
+.We {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 600;
+    background: -webkit-linear-gradient(red, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-name: diw;
+    cursor: pointer;
+
+}
+
+.We::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 80vh;
+    left: 0;
+    background-color: transparent;
+    position: absolute;
+}
+
+.We:hover::after {
+    animation-name: lin;
+    border-radius: 5px;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.line {
+    background-color: rgb(241, 35, 35);
+    height: 10px;
+    width: 100vw;
+    /* border-bottom: 10px solid black; */
+
+    animation-name: lin;
+
+    animation-duration: 1s;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.ann {
+    position: absolute;
+    bottom: 5vh;
+    height: 250px;
+}
+
+.ann1 {
+    left: 85vw;
+}
+
+@keyframes key1 {
+    from {
+        filter: drop-shadow(0 0 10px rgb(210, 203, 9));
+    }
+
+    to {
+        filter: drop-shadow(0 6px 80px rgb(210, 203, 9));
+    }
+}
+
+@keyframes crack {
+    from {
+        left: 0vw;
+        top: 100vh;
+    }
+
+    to {
+        left: 80vw;
+        top: 0vh;
+    }
+}
+
+@keyframes crack2 {
+    from {
+        right: 0vw;
+        top: 100vh;
+    }
+
+    to {
+        right: 80vw;
+        top: 0vh;
+    }
+}
+
+@keyframes diw {
+    from {
+        margin-bottom: 0px;
+    }
+
+    to {
+        margin-bottom: 50px;
+    }
+}
+
+@keyframes lin {
+    0% {
+        width: 0;
+        left: 0;
+        background: linear-gradient(to right, rgb(91, 5, 5), rgb(255, 0, 43), rgb(255, 115, 0), yellow);
+    }
+
+    40% {
+        width: 100%;
+        left: 0%;
+        background: linear-gradient(to right, rgb(91, 5, 5), rgb(255, 0, 43), yellow, rgb(255, 115, 0));
+    }
+
+    70% {
+        width: 100%;
+        left: 0%;
+        background: linear-gradient(to right, rgb(255, 0, 43), yellow, rgb(255, 115, 0), rgb(91, 5, 5));
+    }
+
+    100% {
+        width: 0%;
+        left: 100%;
+        background: linear-gradient(to right, yellow, rgb(255, 115, 0), rgb(255, 0, 43), rgb(91, 5, 5));
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .We {
+        font-size: 70px;
+    }
+
+    .We::after {
+        bottom: 60vh;
+    }
+
+    .ann {
+        display: none;
+    }
+
+    .im {
+        transform: translateY(5vh);
+    }
+
+}
